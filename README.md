@@ -104,14 +104,53 @@ REVOKE SELECT ON tabela FROM nome_do_usuario;
 
 > Método: Método de autenticação (`md5`, `password`, `trust`, `reject`, etc.)
 
-# Permitir conexões locais sem senha
-local   all             all                                     trust
+![alt text](./imgs/image.png)
 
-# Permitir conexões de qualquer IP na rede 192.168.1.0/24 com autenticação MD5
-host    all             all             192.168.1.0/24          md5
+#### Metodologia de Autenticação Comum:
 
-# Permitir conexões do IP 203.0.113.1 ao banco de dados 'meubanco' com autenticação MD5
-host    meubanco        all             203.0.113.1/32          md5
+> `trust`: Conexões são permitidas sem senha.
 
-# Rejeitar todas as outras conexões
-host    all             all             all                     reject
+> `md5` : Utiliza MD5 para encriptar senhas.
+
+> `password`: Senha é enviada em texto plano.
+
+> `reject`: Rejeita todas as conexões correspondentes.
+
+#### Melhores Práticas:
+
+> Utilize sub-redes específicas em vez de permitir conexões de qualquer IP.
+
+> Combine métodos de autenticação robustos como `md5` ou `scram-sha-256`
+
+> Mantenha o arquivo organizado e documentado para fácil manutenção.
+
+## Backup e Recuperação no PostgreSQL
+
+### Tipos de backup
+
+> Lógico: O backup lógico consiste em exportar os dados do banco de dados em um formato legível (geralmente SQL), que pode ser importado em um banco de dados.
+
+> `pg_dump` -U nome_do_usuario -d nome_do_banco -F c -b -v -f arquivo.backup
+
+>`pg_restore` -U nome_do_usuario -d nome_do_banco -v arquivo.backup
+
+
+> Físico: O backup físico envolve copiar diretamente os arquivos do banco de dados no sistema de arquivos. Isso inclui todos os arquivos de dados, logs de transação, e outros arquivos essenciais para o funcionamento do banco de dados.
+
+>`pg_basebackup`-D /caminho/para/backup -Ft -z -P
+
+
+
+### Detalhamento do `pg_dump`
+
+>-U nome_do_usuario:  Especifica o nome do usuário que irá se conectar ao banco de dados.  Exemplo:  `-U postgres` indica que o usuário `postgres` será utilizado para a conexão.
+
+>-d nome_do_banco:  Especifica o nome do banco de dados do qual será feito o backup.  Exemplo: `-d meu_banco` indica que o banco de dados `meu_banco` será alvo do backup.
+
+>-F c:  Define o formato do arquivo de backup.   - `c` significa "custom", um formato de backup personalizado que pode ser restaurado usando a ferramenta `pg_restore`.  Outros formatos possíveis incluem `t` (tar) e `p` (plain text).
+
+>-b:  Inclui grandes objetos (blobs) no backup.  Útil se o banco de dados contém dados binários armazenados como grandes objetos.
+
+>-v:   Ativa o modo verboso, que faz com que o `pg_dump` mostre mais informações durante o processo de backup. Útil para monitorar o progresso e diagnosticar problemas.
+
+>-f arquivo.backup:  Especifica o nome do arquivo onde o backup será salvo.  Exemplo: `-f meu_backup.backup` salva o backup no arquivo `meu_backup.backup`.
