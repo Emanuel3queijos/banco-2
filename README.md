@@ -1,4 +1,3 @@
-# Banco 2
 
 # Catálogo de SGBD
 
