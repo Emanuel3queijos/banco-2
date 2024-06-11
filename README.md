@@ -288,3 +288,50 @@ public class Produto {
 >Melhoria da Eficiência Operacional
 
 >Suporte à Estratégia de Negócios
+
+# Modelagem Dimensional
+>A Modelagem Dimensional é uma técnica utilizada no Datawarehousing para organizar e estruturar os dados de forma a facilitar a análise e consulta. Ela envolve a criação de modelos que representam as dimensões e fatos do negócio.
+
+## Componentes da Modelagem Dimensional:
+
+
+>`Dimensões`: São características ou categorias pelos quais os dados são analisados. (tempo, localização, produto, cliente, etc.)
+
+>`Fatos`: São medidas numéricas ou quantitativas que representam informações sobre o negócio. (vendas, receitas, estoques, etc.)
+
+>`Tabelas de Dimensão e Fato`:  As tabelas de dimensão contêm informações detalhadas sobre as dimensões, enquanto as tabelas de fato armazenam as medidas numéricas relacionadas aos fatos.
+
+
+
+![alt text](./imgs/modelagem%20dimensional.png)
+
+# Comparação com a Modelagem Relacional
+
+>Modelagem Relacional: É baseada em entidades e relacionamentos, onde as tabelas representam entidades e suas relações são definidas por chaves primárias e estrangeiras.
+
+>Modelagem Dimensional: É orientada para a análise e consulta, enfatizando dimensões e fatos para facilitar a compreensão e extração de informações.
+
+## Principais Diferenças:
+
+>Finalidade: A relacional é mais adequada para transações e processamento de dados em tempo real,  já a dimensional é voltada para análise e consulta de dados históricos.
+  
+>Estrutura: A relacional utiliza esquemas normalizados, enquanto a dimensional utiliza esquemas desnormalizados para simplificar a análise.
+
+![alt text](./imgs/modalagem%20dimensional%20tipos.png)
+
+
+## Estrutura e Características do Modelo Estrela
+
+>O Modelo Estrela consiste em uma tabela de fatos central conectada a várias tabelas de dimensão em um padrão semelhante a uma estrela.
+
+### Características do Modelo Estrela:
+
+>Tabela de Fatos Central: Contém as medidas numéricas ou quantitativas do negócio.
+
+>Tabelas de Dimensão: Representam as diferentes dimensões pelas quais os dados podem ser analisados.
+
+>Relação de uma para muitos:  A tabela de fatos está conectada às tabelas de dimensão por chaves estrangeiras em um relacionamento de uma para muitos.
+
+![alt text](./imgs/modelo%20estrela.png)
+
+
