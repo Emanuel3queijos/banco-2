@@ -334,18 +334,18 @@ public class Produto {
 ![alt text](./imgs/modelo%20estrela.png)
 
 
-## Modelo Floco de Neve
+# Modelo Floco de Neve
 
 
 >O Modelo Floco de Neve é semelhante ao Modelo Estrela, mas com uma estrutura mais normalizada nas tabelas de dimensão.
 
-### Características do Modelo Floco de Neve:
+## Características do Modelo Floco de Neve:
 
 >Tabela de Fatos Central:  Assim como no Modelo Estrela, a tabela de fatos contém as medidas numéricas do negócio.
 
 >Tabelas de Dimensões Normalizadas: As tabelas de dimensão no Modelo Floco de Neve podem ser mais normalizadas do que no Modelo Estrela, o que significa que podem conter sub dimensões e hierarquias mais detalhadas.
 
-### Componentes do Diagrama:
+## Componentes do Diagrama:
 
 
 
@@ -368,3 +368,63 @@ public class Produto {
 >Transformação `(Transform)`: Envolve a limpeza, padronização, enriquecimento e agregação dos dados extraídos. Prepara os dados para análise, garantindo consistência, qualidade e relevância.
 
 >Carga `(Load)`:   Carrega os dados transformados no Data Warehouse ou Data Mart. Armazena os dados de forma organizada e otimizada para consulta e análise.
+
+
+# OLAP versus OLTP 
+
+`OLAP (Online Analytical Processing)`: É usado para análise de dados e suporta consultas complexas que envolvem agregações, tendências e análises multidimensionais.
+
+### Características:
+
+>Dados históricos e consolidados.
+
+>Estrutura dimensional (Modelo Estrela, Floco de Neve).
+
+>Consultas complexas e analíticas.
+
+
+`OLTP (Online Transaction Processing)`: É usado para operações de transação em tempo real, como inserções, atualizações e exclusões de dados.
+
+### Características:
+
+>Dados operacionais em tempo real.
+
+>Estrutura normalizada.
+
+>Consultas simples e transacionais.
+
+## OLAP
+
+>`Aplicações`:  Análise de vendas, relatórios gerenciais, previsões de vendas, análise de tendências de mercado, business intelligence.
+
+>`Uso`: Utilizado por gerentes, analistas e tomadores de decisão para análises estratégicas e de alto nível.
+
+
+## OLTP
+
+>`Aplicações`: Processamento de pedidos, transações bancárias, reservas online, registros de transações.
+
+>`Uso`: Utilizado por sistemas operacionais e de processamento em tempo real para operações diárias e transações de negócios.
+
+>`Finalidade`: OLAP é para análise e tomada de decisão, enquanto OLTP é para transações em tempo real.
+
+>`Estrutura de Dados`: OLAP utiliza estrutura dimensional, OLTP utiliza estrutura normalizada.
+
+>`Consultas`: OLAP suporta consultas complexas, OLTP suporta consultas simples.
+
+## Benefícios de cada Tipo de Processamento:
+
+>`OLAP`: Melhora a capacidade de análise e suporta tomada de decisão estratégica.
+
+>`OLTP`: Garante transações precisas e em tempo real, suportando operações diárias do negócio.
+
+>`Consultas`: OLAP suporta consultas complexas, OLTP suporta consultas simples.
+
+## Benefícios de cada Tipo de Processamento:
+
+>`OLAP`: Melhora a capacidade de análise e suporta tomada de decisão estratégica.
+
+>`OLTP`: Garante transações precisas e em tempo real, suportando operações diárias do negócio.
+
+![alt text](./imgs/olap%20x%20oltp.png)
+
