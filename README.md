@@ -183,3 +183,63 @@ REVOKE SELECT ON tabela FROM nome_do_usuario;
 > Flexibilidade: Algumas consultas complexas podem ser mais difíceis de implementar com ORM.
 
 ![alt text](./imgs/ORM.png)
+
+## Object Query Language (OQL)
+
+>Abstração da linguagem SQL para consulta específicas em bancos de dados orientados a objetos.
+
+>Similar ao SQL, mas opera sobre objetos em vez de tabelas.
+
+>Permite consultas complexas usando uma sintaxe orientada a objetos.
+
+```sql
+SELECT o.cpf FROM vendas.clientes o WHERE o.pessoa_fisica.nome = 'Maria Bonita'
+```
+
+## Java Persistence API (JPA)
+
+>Especificação da Java EE para gerenciamento de dados relacionais em aplicações Java.
+
+>Define uma API padrão para mapeamento de objetos Java para tabelas de banco de dados.
+
+>Não é uma implementação, mas deu origem a várias implementações existentes, como Hibernate e EclipseLink, docTrine.
+
+### Benefícios do JPA
+
+>Independência de Implementação: O mesmo projeto pode transitar entre diferentes implementações de JPA.
+
+>Anotações:  Usa anotações para definir mapeamentos, facilitando a configuração.
+
+>Transações: Suporte robusto a transações, incluindo controle de concorrência.
+
+```java
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+@Entity
+public class Produto {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    private String nome;
+    private Double preco;
+    private String descricao;
+
+}
+
+```
+
+## Hibernate
+
+>Referência de implementação: É o mais popular framework ORM 100% desenvolvido em java.
+
+>Independente de banco de dados: Suporta vários bancos de dados relacionais sem a necessidade de modificar o código Java.
+
+>Cache de segundo nível:  Armazena dados frequentemente acessados na memória para melhorar o desempenho. Isso reduz a quantidade de acessos ao banco de dados.
+
+>HQL: Hibernate Query Language , linguagem de consulta orientada a objetos semelhante ao SQL que permite consultas complexas usando a sintaxe familiar do SQL, mas aplicável a objetos persistentes.
