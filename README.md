@@ -334,3 +334,37 @@ public class Produto {
 ![alt text](./imgs/modelo%20estrela.png)
 
 
+## Modelo Floco de Neve
+
+
+>O Modelo Floco de Neve é semelhante ao Modelo Estrela, mas com uma estrutura mais normalizada nas tabelas de dimensão.
+
+### Características do Modelo Floco de Neve:
+
+>Tabela de Fatos Central:  Assim como no Modelo Estrela, a tabela de fatos contém as medidas numéricas do negócio.
+
+>Tabelas de Dimensões Normalizadas: As tabelas de dimensão no Modelo Floco de Neve podem ser mais normalizadas do que no Modelo Estrela, o que significa que podem conter sub dimensões e hierarquias mais detalhadas.
+
+### Componentes do Diagrama:
+
+
+
+>Tabela de Fatos:  Representada no centro do diagrama, contendo medidas numéricas.
+
+>Tabelas de Dimensão Normalizadas:  Representadas ao redor da tabela de fatos, conectadas por chaves estrangeiras.
+
+>Subdimensões e Hierarquias: Algumas tabelas de dimensão podem conter subdimensões ou hierarquias normalizadas
+
+![alt text](./imgs/kalma%20floco%20de%20neve.png)
+
+
+# Definição e Função do Processo ETL
+
+>O processo ETL tem como objetivo extrair dados de várias fontes, transformá-los em um formato adequado para análise e carregá-los no Data Warehouse para armazenamento e consulta.
+
+
+>Extração `(Extract)`:  Consiste em extrair dados de fontes heterogêneas, como bancos de dados, arquivos, APIs, etc. 
+
+>Transformação `(Transform)`: Envolve a limpeza, padronização, enriquecimento e agregação dos dados extraídos. Prepara os dados para análise, garantindo consistência, qualidade e relevância.
+
+>Carga `(Load)`:   Carrega os dados transformados no Data Warehouse ou Data Mart. Armazena os dados de forma organizada e otimizada para consulta e análise.
