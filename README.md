@@ -1,2 +1,94 @@
-# banco-2-
-resumo dot md de banco de dados 2, professor canalha 
+# Banco 2
+
+## Catálogo de SGBD
+>conjunto de tabelas que armazena a estrutura de banco de dados
+
+### Principais components: 
+>Tabelas, esquemas, índices, tipos de dados, funções, armazenados nas classes: 
+
+>sql pg_class,  pg_tables,  pg_indexes, pg_type
+
+
+```sql 
+
+SELECT * FROM pg_tables WHERE schemaname = 'public';
+
+
+```
+
+## Administração de SGBD: Controle de Acesso
+
+>Controle de acesso envolve gerenciar quem pode acessar e manipular dados no banco.
+
+>Métodos:  ACLs (Access Control Lists), GRANT e REVOKE comandos.
+
+
+```sql 
+
+ALTER DEFAULT PRIVILEGES IN SCHEMA nome_do_esquema GRANT SELECT ON TABLES TO nome_do_papel;
+
+
+```
+
+## Administração de Usuários no PostgreSQL
+
+```sql
+
+
+  CREATE USER nome_do_usuario WITH PASSWORD 'senha';
+
+
+  ALTER USER nome_do_usuario WITH PASSWORD 'nova_senha';
+
+
+  DROP USER nome_do_usuario;
+
+
+  GRANT SELECT ON tabela TO nome_do_usuario;
+
+
+```
+
+
+## Administração de Papéis no PostgreSQL
+
+>Papéis são conjuntos de permissões que podem ser atribuídos aos usuários.
+
+
+```sql 
+
+
+CREATE ROLE nome_do_papel;
+
+GRANT nome_do_papel TO nome_do_usuario;
+
+REVOKE nome_do_papel FROM nome_do_usuario;
+
+
+```
+
+
+## Administracao de provilegios
+
+```sql 
+
+GRANT SELECT, INSERT ON tabela TO nome_do_papel;
+
+
+```
+
+>## Revogacao de Direitos
+
+```sql 
+
+REVOKE SELECT ON tabela FROM nome_do_usuario;
+
+
+```
+
+>Utilização de `pg_hba.conf` para Controle de Acesso a Nível de Conexão
+
+>O pg_hba.conf é o arquivo de configuração de Host-Based Authentication (HBA) do PostgreSQL.
+
+>Define quais usuários podem se conectar, de quais hosts e com quais métodos de autenticação.
+
