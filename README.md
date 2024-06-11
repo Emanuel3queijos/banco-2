@@ -132,25 +132,54 @@ REVOKE SELECT ON tabela FROM nome_do_usuario;
 
 > `pg_dump` -U nome_do_usuario -d nome_do_banco -F c -b -v -f arquivo.backup
 
->`pg_restore` -U nome_do_usuario -d nome_do_banco -v arquivo.backup
-
+> `pg_restore` -U nome_do_usuario -d nome_do_banco -v arquivo.backup
 
 > Físico: O backup físico envolve copiar diretamente os arquivos do banco de dados no sistema de arquivos. Isso inclui todos os arquivos de dados, logs de transação, e outros arquivos essenciais para o funcionamento do banco de dados.
 
->`pg_basebackup`-D /caminho/para/backup -Ft -z -P
-
-
+> `pg_basebackup`-D /caminho/para/backup -Ft -z -P
 
 ### Detalhamento do `pg_dump`
 
->-U nome_do_usuario:  Especifica o nome do usuário que irá se conectar ao banco de dados.  Exemplo:  `-U postgres` indica que o usuário `postgres` será utilizado para a conexão.
+> -U nome_do_usuario: Especifica o nome do usuário que irá se conectar ao banco de dados. Exemplo: `-U postgres` indica que o usuário `postgres` será utilizado para a conexão.
 
->-d nome_do_banco:  Especifica o nome do banco de dados do qual será feito o backup.  Exemplo: `-d meu_banco` indica que o banco de dados `meu_banco` será alvo do backup.
+> -d nome_do_banco: Especifica o nome do banco de dados do qual será feito o backup. Exemplo: `-d meu_banco` indica que o banco de dados `meu_banco` será alvo do backup.
 
->-F c:  Define o formato do arquivo de backup.   - `c` significa "custom", um formato de backup personalizado que pode ser restaurado usando a ferramenta `pg_restore`.  Outros formatos possíveis incluem `t` (tar) e `p` (plain text).
+> -F c: Define o formato do arquivo de backup. - `c` significa "custom", um formato de backup personalizado que pode ser restaurado usando a ferramenta `pg_restore`. Outros formatos possíveis incluem `t` (tar) e `p` (plain text).
 
->-b:  Inclui grandes objetos (blobs) no backup.  Útil se o banco de dados contém dados binários armazenados como grandes objetos.
+> -b: Inclui grandes objetos (blobs) no backup. Útil se o banco de dados contém dados binários armazenados como grandes objetos.
 
->-v:   Ativa o modo verboso, que faz com que o `pg_dump` mostre mais informações durante o processo de backup. Útil para monitorar o progresso e diagnosticar problemas.
+> -v: Ativa o modo verboso, que faz com que o `pg_dump` mostre mais informações durante o processo de backup. Útil para monitorar o progresso e diagnosticar problemas.
 
->-f arquivo.backup:  Especifica o nome do arquivo onde o backup será salvo.  Exemplo: `-f meu_backup.backup` salva o backup no arquivo `meu_backup.backup`.
+> -f arquivo.backup: Especifica o nome do arquivo onde o backup será salvo. Exemplo: `-f meu_backup.backup` salva o backup no arquivo `meu_backup.backup`.
+
+## Mapeamento objeto relacional (ORM – Object/Relational Mapping)
+
+![alt text](./imgs/img2.png)
+
+> ORM é uma técnica que conecta o modelo de objetos de uma aplicação com um banco de dados relacional.
+
+> Permite que desenvolvedores interajam com o banco de dados usando paradigmas orientados a objetos.
+
+> Facilita a manipulação de dados através de objetos, evitando SQL manual.
+
+> Possibilita a manutenção do paradigma da Orientação à Objetos além da camada de controle.
+
+(osvaldo requiao melo jgp4ojhh4jo)
+
+### Vantagens da ORM
+
+> Produtividade: Diminui a quantidade de código necessário para interagir com o banco de dados.
+
+> Manutenibilidade: Facilita a manutenção do código, pois separa lógica de negócio de acesso a dados.
+
+> Portabilidade: Facilita a migração entre diferentes bancos de dados relacionais.
+
+### Desvantagens do ORM
+
+> Curva de Aprendizado: Pode ser complexo aprender e configurar corretamente.
+
+> Performance: Pode introduzir overhead em operações simples.
+
+> Flexibilidade: Algumas consultas complexas podem ser mais difíceis de implementar com ORM.
+
+![alt text](./imgs/ORM.png)
