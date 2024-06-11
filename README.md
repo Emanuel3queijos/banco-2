@@ -104,4 +104,14 @@ REVOKE SELECT ON tabela FROM nome_do_usuario;
 
 > Método: Método de autenticação (`md5`, `password`, `trust`, `reject`, etc.)
 
-![alt text](./imgs/image.png)
+# Permitir conexões locais sem senha
+local   all             all                                     trust
+
+# Permitir conexões de qualquer IP na rede 192.168.1.0/24 com autenticação MD5
+host    all             all             192.168.1.0/24          md5
+
+# Permitir conexões do IP 203.0.113.1 ao banco de dados 'meubanco' com autenticação MD5
+host    meubanco        all             203.0.113.1/32          md5
+
+# Rejeitar todas as outras conexões
+host    all             all             all                     reject
