@@ -428,3 +428,116 @@ public class Produto {
 
 ![alt text](./imgs/olap%20x%20oltp.png)
 
+![alt text](./imgs/oltpolap%20db.png)
+
+
+# Mineração de Dados (Data Mining)
+
+![alt text](./imgs/data%20mining.png)
+
+É o processo de descoberta de padrões, informações e conhecimentos úteis a partir de grandes volumes de dados, utilizando técnicas como:
+
+>Análise estatística;
+
+>Machine learning;
+
+>Inteligência artificial.
+
+## Objetivos da Mineração de Dados:
+
+
+>Identificar padrões ocultos nos dados.
+
+>Gerar insights e conhecimentos para tomada de decisão.
+
+>Prever tendências e comportamentos futuros.
+
+
+![alt text](./imgs/data%20mining%20diagram.png)
+
+
+
+## Técnicas e Algoritmos de Mineração de Dados
+
+
+>`Aprendizado Supervisionado`:  Algoritmos treinados com dados rotulados para fazer previsões ou classificações. Exemplos de Algoritmos:  `Árvores de Decisão`, `Regressão Linear`, `Support Vector Machines` (`SVM`).
+
+>`Aprendizado Não Supervisionado`: Algoritmos utilizados para descobrir padrões e estruturas nos dados sem a necessidade de dados rotulados. Exemplos de Algoritmos: `Clusterização` (`K-means`, `DBSCAN`), `Análise de Componentes Principais` (`PCA`).
+
+>`Aprendizado por Reforço`:  Algoritmos que aprendem por meio de interações com o ambiente e recebem recompensas ou penalidades. Exemplos de Algoritmos: `Q-Learning`, `Deep Q-Networks` (`DQN`).
+
+>Associação de Regras:  Identificação de relações e associações entre itens em conjuntos de dados transacionais. Exemplos de Algoritmos: `Apriori`, `FP-Growth`.
+
+
+## Data Mining - Aplicações e benefícios
+![data mining beneficios](./imgs/data%20mining%20aplicacao%20e%20beneficios.png)
+
+# Processando os dados
+
+## Processamento Digital de imagens (PDI)
+
+Refere-se a um conjunto de métodos e técnicas no qual são geradas novas imagens processadas como resultado de outras imagens de entrada.
+
+## Técnicas de Processamento Digital de Imagens (PDI)
+
+#### 1. Reconhecimento de Padrões
+Identificação de objetos, formas, texturas ou características em imagens.
+
+- **Aplicações**:
+  - Reconhecimento facial
+  - Detecção de objetos
+  - Análise de escrita manual
+- **Técnicas**:
+  - **Machine Learning**: SVM, CNNs
+  - **Transformações de Fourier**
+
+  ![](./imgs/reconhecimento%20de%20padroes.png)
+
+#### 2. Descoberta de Padrões
+Identificação de padrões visuais desconhecidos em imagens.
+
+- **Aplicações**:
+  - Análise de imagens médicas
+  - Descoberta de padrões científicos
+- **Técnicas**:
+  - **Clustering**: K-means
+  - **PCA**: Análise de Componentes Principais
+
+  ![descoberta de padroes img](./imgs/descoberta%20de%20padroes.png)
+
+#### 3. Interpolação
+Estima valores intermediários entre pontos de dados conhecidos.
+
+- **Tipos**:
+  - **Nearest Neighbor**: Valor do pixel mais próximo
+  - **Bilinear**: Média ponderada dos quatro pixels mais próximos
+  - **Bicubic**: Considera 16 pixels mais próximos
+- **Aplicações**:
+  - Zoom de imagens
+  - Correção geométrica
+
+![interpolacao img](./imgs/interpolacao.png)
+
+#### 4. Redimensionamento (Resizing)
+Altera o tamanho de uma imagem (largura e altura).
+
+- **Técnicas**:
+  - **Interpolação de Pixel**: Nearest Neighbor, Bilinear, Bicubic
+  - **Transformações Geométricas**: Preservação de proporções
+- **Aplicações**:
+  - Ajuste para diferentes tamanhos de tela
+  - Preparo para análise
+
+![redimencionamento](./imgs/resizing.png)
+
+#### 5. Escala de Cinza (Gray Scale)
+Converte imagens coloridas em tons de cinza.
+
+- **Métodos**:
+  - **Média dos Canais de Cor**: Média dos valores RGB
+  - **Luma Method**: Ponderação baseada na percepção humana (0.299R + 0.587G + 0.114B)
+- **Aplicações**:
+  - Redução da complexidade de processamento
+  - Preparo para reconhecimento de padrões
+
+Essas técnicas são fundamentais em diversos campos, desde a análise de imagens médicas até a visão computacional em sistemas de segurança e automação industrial.
